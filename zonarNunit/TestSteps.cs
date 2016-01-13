@@ -32,6 +32,6 @@ namespace zonarNunit
         {
             bool result = action.findCharInString("sss", "s");
         }
-
+        
     }
 }
