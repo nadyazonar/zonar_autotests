@@ -11,8 +11,8 @@ namespace zonarNunit.Data
 
         // input data
         public static BuildingCreationsParameters maimi = new BuildingCreationsParameters("300", "300", "Miami Base code", "T6", "48A", "Open");
-        public static BuildingCreationsParameters maimi1 = new BuildingCreationsParameters("150", "150", "Miami Base code", "T6", "48A", "Open");
-
+        public static BuildingCreationsParameters maimi1 = new BuildingCreationsParameters(/*"150", "150", "Miami Base code", "T6", "48A", "Open"*/);
+        public static BuildingCreationsParameters test = new BuildingCreationsParameters();
 
         public string Width { get; set; }
         public string Depth { get; set; }
@@ -23,7 +23,9 @@ namespace zonarNunit.Data
 
 
 
-        
+        public BuildingCreationsParameters() {
+            maimi1field();
+                }
         public BuildingCreationsParameters(string width, string depth, string zoningCode, string zone, string subZone, string type)
         {
             Width = width;
@@ -32,7 +34,19 @@ namespace zonarNunit.Data
             Zone = zone;
             Type = type;
             SubZone = subZone;
-          
+
+           
+        }
+
+        public void maimi1field() {
+                       
+            maimi1.Width = "150";
+            maimi1.Depth = "150";
+            maimi1.ZoningCode = "Miami Base code";
+            maimi1.Zone = "T6";
+            maimi1.SubZone = "48A";
+            maimi1.Type = "Open";
+
         }
 
         
@@ -62,12 +76,10 @@ namespace zonarNunit.Data
         public string PrincipalTowerHeight { get; set; }
         public string MaxBuiltArea { get; set; }
         public string MaxBuildingArea { get; set; }
-
-
         public string[] BuildingCreationsParametersTemplateArray = new string[12];
         
 
-        public MaximumLotCapacity(                 string lotAreaNet,                   string lotAreaAcres, 
+        public MaximumLotCapacity(string lotAreaNet,                   string lotAreaAcres, 
                                                    string residentialDensity,           string dUAllowed,                    
                                                    string fAR,                          string lotCoverage,
                                                    string minOpenSpace,                 string principalBuildingMaxHeight, 
