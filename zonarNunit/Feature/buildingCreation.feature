@@ -58,31 +58,36 @@ Scenario: Check Format values on Capacity Analysis tab
  And I have Setup Building Parameters
  And I get zoningResult Maximum Lot Capacity Table data
  Then I compare with "<templateData>"
+ When I link to My Building Tab
+ And I have Delete Project
+ Then Project is deleted
+ And  I see my name in a conner
 
  Examples: 
- | zoningData	| templateData  |
- | Maimi		| templateMaimi |
- | Maimi1		| templateMaimi |
+ | zoningData	| templateData   |
+ | Maimi		| templateMaimi  |
+ | Maimi1		| templateMaimi1 |
 
 
- @buildingCreation 
+ @buildingCreation @Stable
  Scenario Outline: Capacity Analysis Basic calculation
  Given I Have Main Page With Login User
+ And I have Opened My Buildings Tab
+ When I Click Create building Button
  And I Have "<zoningData>"
- And I create project with "<zoningData>"
- And I link to Capacity Analysis Tab
- Then I have "<activeNotifications>" are displayed
- When I set "<capacityData>" Case Study Calibration
- Then I get "<capacityResult>" Result Data
- And I compare "<capacityResult>" with "<capacityTemplate>"
+ Then Progect Page is opened
+ When I Have Opened Tab Capacity Analysis
+ And I Set "<dataUseProgram>" to Calibratuion section Use Program Tab
+ And I Click Save Button
+ And I have Opened Resukt Table on Capacity Analisis Tab 
+ And I get zoningResult Result from Capasity Analisys
+ Then I compare with "<templateData>"
+ When I link to My Building Tab
+ And I have Delete Project
+ Then Project is deleted
+ And  I see my name in a conner
 
-
- Examples:  
- | capacityData  | activeNotifications		| capaCityData		| capacityResult | capacityTemplate |
- | MaimiCapacity | activeNotificationsMaimi |maimiCapacityData	| result         | MaimiTemplate    |
-
-
-
-
-
-
+ Examples: 
+ | zoningData | dataUseProgram                 | templateData  |
+ | Maimi      | templateMaimiCapacityAnalisys  | templateMaimiCapacityAnalisys |
+ | Maimi1     | templateMaimiCapacityAnalisys1 | templateMaimiCapacityAnalisys |

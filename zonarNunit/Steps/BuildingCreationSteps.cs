@@ -34,6 +34,18 @@ namespace zonarNunit
         }
 
 
+        [Given(@"I create project with Input Data")]
+        public void GivenICreateProjectWithInputData()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [Given(@"I link to Capacity Analysis Tab")]
+        public void GivenILinkToCapacityAnalysisTab()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
         //When
         [When(@"I Have ""(.*)""")]
         public void WhenIHave(string zoningData)
@@ -95,6 +107,7 @@ namespace zonarNunit
         [When(@"I have Delete Project")]
         public void WhenIHaveDeleteProject()
         {
+            actionsBase.reloadPage();
             actionsAccountPages.iHaveDeleteProject();
         }
 
@@ -104,6 +117,56 @@ namespace zonarNunit
         {
             actionsProjectPage.iHaveOpenedResuktTableOnCapacityAnalisisTab();
         }
+
+
+
+
+        [When(@"I Set ""(.*)"" to Calibratuion section Use Program Tab")]
+        public void WhenISetToCalibratuionSectionUseProgramTab(string dataUseProgram)
+        {
+            actionsProjectPage.iSetCaseStudyCalibratuionSectionToAverageValues("Residential", "100");
+            actionsProjectPage.iSetCaseStudyCalibratuionSectionToAverageValues("Dwelling Unit Average Gross Area", "1000");
+            actionsProjectPage.iSetCaseStudyCalibratuionSectionToAverageValues("Lodging Rooms", "100");
+            actionsProjectPage.iSetCaseStudyCalibratuionSectionToAverageValues("Lodging Room Average Gross Area", "100");
+            actionsProjectPage.iSetCaseStudyCalibratuionSectionToAverageValues("Office", "5000");
+            actionsProjectPage.iSetCaseStudyCalibratuionSectionToAverageValues("Commercial", "5000");
+        }
+
+
+        [When(@"I have Setup Building Parameters")]
+        public void WhenIHaveSetupBuildingParameters()
+        {
+
+        }
+
+        [When(@"I get zoningResult Maximum Lot Capacity Table data")]
+        public List<string> WhenIGetZoningResultMaximumLotCapacityTableData()
+        {
+            result = actionsProjectPage.iGetResultFromRightTable(Data.MaximumLotCapacity.maximumLotCapacity.BuildingCreationsParametersTemplateArray);
+            System.Threading.Thread.Sleep(1000);
+            return result;
+
+        }
+
+
+        [When(@"I get zoningResult Result from Capasity Analisys")]
+        public List<string> WhenIGetZoningResultResultFromCapasityAnalisys()
+        {
+            result = actionsProjectPage.iGetResultFromRightTable(Data.ResultCapacityAnalysis.resultCapacityAnalysis.ResultCapacityAnalysisArray);
+            System.Threading.Thread.Sleep(1000);
+            return result;
+        }
+
+
+
+        [When(@"I set ""(.*)"" Case Study Calibration")]
+        public void WhenISetCaseStudyCalibration(string p0)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+
+
 
 
         //Then
@@ -164,44 +227,9 @@ namespace zonarNunit
         }
 
 
-        [Given(@"I create project with Input Data")]
-        public void GivenICreateProjectWithInputData()
-        {
-            ScenarioContext.Current.Pending();
-        }
+       
 
-        [Given(@"I create project with ""(.*)""")]
-        public void GivenICreateProjectWith(string p0)
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [Given(@"I link to Capacity Analysis Tab")]
-        public void GivenILinkToCapacityAnalysisTab()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [When(@"I have Setup Building Parameters")]
-        public void WhenIHaveSetupBuildingParameters()
-        {
-           
-        }
-
-        [When(@"I get zoningResult Maximum Lot Capacity Table data")]
-        public List<string> WhenIGetZoningResultMaximumLotCapacityTableData()
-        {
-            result = actionsProjectPage.iGetResultFromRightTable();
-            System.Threading.Thread.Sleep(1000);
-            return result;
-
-        }
-
-        [When(@"I set ""(.*)"" Case Study Calibration")]
-        public void WhenISetCaseStudyCalibration(string p0)
-        {
-            ScenarioContext.Current.Pending();
-        }
+        
 
         [Then(@"I compare with ""(.*)""")]
         public void ThenICompareWith(string templateData)
