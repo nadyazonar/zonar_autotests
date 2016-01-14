@@ -27,7 +27,7 @@ namespace zonarNunit.Action
     {
 
         
-        private string currentProjectName = rnd();
+        private string currentProjectName = "Test - " +  rnd();
 
         
         //account page logic
@@ -282,6 +282,39 @@ namespace zonarNunit.Action
             Thread.Sleep(1000);
             waitUntilElementPresent(AccountPageLocators.deleteButtonOnPopUp);
             driver.FindElement(AccountPageLocators.deleteButtonOnPopUp).Click();
+        }
+
+        public void iHaveDeleteAllTestBuilding()
+        {
+            Action.AccountPageActions aa = new Action.AccountPageActions();
+            aa.mainPageWithLoginUser();
+            System.Threading.Thread.Sleep(2000);
+            aa.iHaveOpenedMyBuildingsTab();
+
+            waitUntilElementPresent(AccountPageLocators.projectCardBuildingTab);
+
+
+            ICollection<IWebElement> labels = driver.FindElements(By.TagName("label"));
+            foreach (IWebElement lable in labels)
+            {
+                if (lable.Text.Contains("Test"))
+                {
+
+                    var parent = lable.FindElement(By.XPath(".."));
+                    var delete = parent.FindElement(AccountPageLocators.deleteLinkBuildingTab);
+                    delete.Click();
+                    waitUntilElementPresent((AccountPageLocators.deleteBuildingPopUpTitle));
+                    break;
+                }
+            }
+
+            Console.Write("Deleting is started");
+            Thread.Sleep(1000);
+            waitUntilElementPresent(AccountPageLocators.deleteButtonOnPopUp);
+            Thread.Sleep(1000);
+            driver.FindElement(AccountPageLocators.deleteButtonOnPopUp).Click();
+           
+
         }
 
         public void projectIsDeleted()

@@ -97,7 +97,7 @@ namespace zonarNunit.ActionsLoginPage
 
         }
 
-        public List<string> iGetResultFromRightTable()
+        public List<string> iGetResultFromRightTable(string[] resultTable)
         {
             System.Threading.Thread.Sleep(1000);
             //zonarNunit.Data.MaximumLotCapacity maximumLotCapacity = new zonarNunit.Data.MaximumLotCapacity("Lot Area Net", "Lot Area Acres", "Residential Density", "DU Allowed", "FAR",
@@ -105,10 +105,10 @@ namespace zonarNunit.ActionsLoginPage
 
 
             var result = new List<string>();
-            string[] BuildingCreationsParametersTemplateArray = new string[12];
+            string[] BuildingCreationsParametersTemplateArray = new string[20];
 
             int i = 0;
-            foreach (string parameter in Data.MaximumLotCapacity.maximumLotCapacity.BuildingCreationsParametersTemplateArray)
+            foreach (string parameter in resultTable)
             {
 
                 IList<IWebElement> items = driver.FindElements(By.CssSelector(".item"));
@@ -164,7 +164,7 @@ namespace zonarNunit.ActionsLoginPage
             if (inputData == "templateMaimi")
             {
                 Assert.AreEqual(zonarNunit.Data.MaximumLotCapacity.maimi.BuildingCreationsParametersTemplateArray, result);
-                
+
 
             }
             else
@@ -173,7 +173,16 @@ namespace zonarNunit.ActionsLoginPage
                 {
                     Assert.AreEqual(zonarNunit.Data.MaximumLotCapacity.maimi1.BuildingCreationsParametersTemplateArray, result);
                 }
-            }
+                else
+                {
+                    if (inputData == "templateMaimiCapacityAnalisys")
+                    {
+                        Assert.AreEqual(zonarNunit.Data.ResultCapacityAnalysis.maimi.ResultCapacityAnalysisArray, result);
+                        Console.Write(result);
+                        Console.Write(zonarNunit.Data.ResultCapacityAnalysis.maimi.ResultCapacityAnalysisArray);
+                    }
+                }
+            }   
 
 
         }

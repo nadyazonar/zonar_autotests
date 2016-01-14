@@ -177,7 +177,7 @@ this.ScenarioSetup(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("buildingCreation")]
         [NUnit.Framework.CategoryAttribute("Stable")]
         [NUnit.Framework.TestCaseAttribute("Maimi", "templateMaimi", null)]
-        [NUnit.Framework.TestCaseAttribute("Maimi1", "templateMaimi", null)]
+        [NUnit.Framework.TestCaseAttribute("Maimi1", "templateMaimi1", null)]
         public virtual void BasicCalculationTest(string zoningData, string templateData, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -208,6 +208,14 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And("I get zoningResult Maximum Lot Capacity Table data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 60
  testRunner.Then(string.Format("I compare with \"{0}\"", templateData), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 61
+ testRunner.When("I link to My Building Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 62
+ testRunner.And("I have Delete Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 63
+ testRunner.Then("Project is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 64
+ testRunner.And("I see my name in a conner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -215,34 +223,51 @@ this.ScenarioSetup(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Capacity Analysis Basic calculation")]
         [NUnit.Framework.CategoryAttribute("buildingCreation")]
-        [NUnit.Framework.TestCaseAttribute("MaimiCapacity", "activeNotificationsMaimi", "maimiCapacityData", "result", "MaimiTemplate", null)]
-        public virtual void CapacityAnalysisBasicCalculation(string capacityData, string activeNotifications, string capaCityData, string capacityResult, string capacityTemplate, string[] exampleTags)
+        [NUnit.Framework.CategoryAttribute("Stable")]
+        [NUnit.Framework.TestCaseAttribute("Maimi", "templateMaimiCapacityAnalisys", "templateMaimiCapacityAnalisys", null)]
+        [NUnit.Framework.TestCaseAttribute("Maimi1", "templateMaimiCapacityAnalisys1", "templateMaimiCapacityAnalisys", null)]
+        public virtual void CapacityAnalysisBasicCalculation(string zoningData, string dataUseProgram, string templateData, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "buildingCreation"};
+                    "buildingCreation",
+                    "Stable"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Capacity Analysis Basic calculation", @__tags);
-#line 69
- this.ScenarioSetup(scenarioInfo);
-#line 70
- testRunner.Given("I Have Main Page With Login User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 71
- testRunner.And("I Have \"<zoningData>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 72
- testRunner.And("I create project with \"<zoningData>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 73
- testRunner.And("I link to Capacity Analysis Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ this.ScenarioSetup(scenarioInfo);
 #line 74
- testRunner.Then(string.Format("I have \"{0}\" are displayed", activeNotifications), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Given("I Have Main Page With Login User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 75
- testRunner.When(string.Format("I set \"{0}\" Case Study Calibration", capacityData), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I have Opened My Buildings Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 76
- testRunner.Then(string.Format("I get \"{0}\" Result Data", capacityResult), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I Click Create building Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 77
- testRunner.And(string.Format("I compare \"{0}\" with \"{1}\"", capacityResult, capacityTemplate), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I Have \"{0}\"", zoningData), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 78
+ testRunner.Then("Progect Page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 79
+ testRunner.When("I Have Opened Tab Capacity Analysis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 80
+ testRunner.And(string.Format("I Set \"{0}\" to Calibratuion section Use Program Tab", dataUseProgram), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 81
+ testRunner.And("I Click Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 82
+ testRunner.And("I have Opened Resukt Table on Capacity Analisis Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 83
+ testRunner.And("I get zoningResult Result from Capasity Analisys", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 84
+ testRunner.Then(string.Format("I compare with \"{0}\"", templateData), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 85
+ testRunner.When("I link to My Building Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 86
+ testRunner.And("I have Delete Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 87
+ testRunner.Then("Project is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 88
+ testRunner.And("I see my name in a conner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

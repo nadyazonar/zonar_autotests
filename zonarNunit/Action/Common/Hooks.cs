@@ -11,11 +11,13 @@ using NUnit.Framework;
 
 
 namespace zonarNunit.Action
+
 {
     [Binding]
-    public class Hooks : BaseAction
+    public  class Hooks : BaseAction
     {
 
+       
         
         [BeforeTestRun]
         public static void BeforeSuite()
@@ -37,21 +39,33 @@ namespace zonarNunit.Action
   
         }
 
+
+
         [AfterScenario] 
         public static void AfterScenario()
         {
 
                 Thread.Sleep(500);
-               
-            
+
         }
 
-        
 
         [AfterFeature]
         public static void AfterFeature()
         {
+      
             driver.Quit();
         }
+
+        [AfterFeature("buildingCreation")]
+        public static void AfterFeature1()
+        {
+            Action.AccountPageActions aa = new Action.AccountPageActions();
+            aa.iHaveDeleteAllTestBuilding();
+            driver.Quit();
+        }
+
+
+       
     }
 }
