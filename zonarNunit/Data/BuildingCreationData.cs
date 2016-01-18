@@ -8,7 +8,7 @@ namespace zonarNunit.Data
 {
     public class BuildingCreationData 
     {
-        
+        //test
         // Zoning Allowances Result Table 
         public string lotArea = "Lot Area";
         public string lotAreaMask = "*,*ft²";
