@@ -16,6 +16,7 @@ namespace zonarNunit.Locators
         public static By zoningAllowances = By.XPath(".//*[@id='tab0']");
         public static By capacityAnalysis = By.XPath(".//*[@id='tab1']");
         public static By calibration = By.XPath(".//*[@id='tab2']");
+               
 
         //Lot Information
         public static By lotInformationTab = By.XPath(".//*[@id='fiter-information']/div/div/ul/li[1]/a");
@@ -52,12 +53,21 @@ namespace zonarNunit.Locators
 
         //Capacity Tab
         // Capacity Left menu Locators
+        
+        public static By parkingTab = By.XPath(".//*[a='Parking']");
+        public static By useProgramTab = By.XPath(".//*[a='Use Program']");
+
         //Capacity right panel locators
 
         public static By resultTableCapacityTab = By.XPath(".//*[a='Results']");
 
+        //Calibration Tab
+        public static By calibrationContainer = By.XPath(".//*[@id='calibrationContainer']/div[1]/div[1]/div/button");
+        public static By calibrationModules = By.XPath(".//*[@id='calibrationContainer']/div[1]/div[1]/ul/li[1]/a");
+        public static By calibrationComponents = By.XPath(".//*[@id='calibrationContainer']/div[1]/div[1]/ul/li[2]/a");
+        public static By calibrationZones = By.XPath(".//*[@id='calibrationContainer']/div[1]/div[1]/ul/li[3]/a");
+        public static By calibrationUses = By.XPath(".//*[@id='calibrationContainer']/div[1]/div[1]/ul/li[4]/a");
 
-        
 
     }
 }

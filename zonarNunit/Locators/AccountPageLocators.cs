@@ -43,7 +43,17 @@ namespace zonarNunit.Locators
         public static By projectCardBuildingTab = By.XPath(".//*[@id='myProject']/div[1]/div/div[1]");
         public static By projectCardBuildingTabs = By.XPath(".//*[@id='myProject']");
         public static By label = By.TagName("label");
+        public static By openProjectLink = By.XPath(".//*[@id='myProject']/div[1]/div/div/div/div/div[2]/a[1]");
 
+        //Base Codes Tab
+        public static By codeLabel = By.XPath(".//*[@id='myCodes']/div/div/div/div/label");
+        public static By codeCheckBox = By.XPath(".//*[@id='checkboxZoningCode0']");
+        public static By codeCloneButton = By.XPath(".//*[@id='myCodes']/div/div/div/div/div/div[2]/div/div[1]/a/span");
+        public static By codeCloneCustomButton = By.XPath(".//*[@id='myCodes']/div/div/div/div/div/div[2]/div/div[2]/a/i");
+        public static By closeCodeClonePopup = By.XPath(".//*[@id='closeReveal']");
+        
+        //Users Management Tab
+        public static By managementTable = By.XPath(".//*[@id='managementAccountSection']/div[1]");
 
         public static By deleteBuildingPopUpTitle = By.CssSelector(".row.m0.modalTitle");
         public static By deleteButtonOnPopUp = By.XPath(".//*[@id='deleteProjectModal']/div[3]/a[1]");

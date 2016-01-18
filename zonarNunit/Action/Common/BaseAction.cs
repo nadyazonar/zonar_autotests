@@ -54,7 +54,7 @@ namespace zonarNunit.Action
         public void mainPageWithLoginUser()
         {
             driver.Navigate().GoToUrl(baseUrl);
-            System.Threading.Thread.Sleep(3000);
+            System.Threading.Thread.Sleep(500);
 
             if ( driver.Title == "My Express Application") 
             {
@@ -112,8 +112,9 @@ namespace zonarNunit.Action
                     if (IsElementPresent(locator)) break;
                 }
                 catch (Exception)
-                { }
-                Thread.Sleep(1500);
+                { 
+                    Thread.Sleep(1000);
+                }
             }  
         }
 
@@ -203,7 +204,7 @@ namespace zonarNunit.Action
                     parent1 = label.FindElement(By.XPath(".."));
                     parent = parent1.FindElement(By.XPath(".."));
                 }
-
+                 
 
             }
  
@@ -215,12 +216,65 @@ namespace zonarNunit.Action
          
 
         }
-       
+
+
+        public bool isElementPresent(By locator)
+        {
+            try
+            {
+                waitForElementPresent(locator);
+                Thread.Sleep(3000);
+                driver.FindElement(locator).Click();
+                Thread.Sleep(3000);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool isElementPresent(IWebElement elememt)
+        {
+            try
+            {
+                elememt.Click();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool accountLinkIsAvailable(string tabName)
+        {
+            bool accountLinkIsAvailable = false;
+
+            IList<IWebElement> divs = driver.FindElements(By.CssSelector(".account-side-nav.no-margin.hide-for-small-only"));
+            foreach (IWebElement div in divs)
+            {
+                IList<IWebElement> links = div.FindElements(By.TagName("a"));
+                foreach (IWebElement link in links)
+                {
+                    if (link.Text.Contains(tabName))
+                    {
+                        link.Click();
+                        Thread.Sleep(3000);
+                        accountLinkIsAvailable = true;
+                    }
+
+                }
+
+            }
+            return accountLinkIsAvailable;
+
+        }
+
+        
 
 
 
-                 
-            
 
 
         public static void logout()

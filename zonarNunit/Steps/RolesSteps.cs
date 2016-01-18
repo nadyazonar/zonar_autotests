@@ -1,6 +1,9 @@
 ﻿using System;
 using TechTalk.SpecFlow;
+using NUnit.Framework;
 using zonarNunit.Steps;
+
+
 
 namespace zonarNunit
 {
@@ -12,7 +15,7 @@ namespace zonarNunit
         {
             actionsLoginPage.enterLogin(loginPageData.basicLogin);
         }
-        
+
         [Given(@"I have entered Exist Basic Password")]
         public void GivenIHaveEnteredExistBasicPassword()
         {
@@ -30,19 +33,19 @@ namespace zonarNunit
         {
             actionsLoginPage.enterPassword(loginPageData.proRolePass);
         }
-        
+
         [Given(@"I have entered Exist Admin Login")]
         public void GivenIHaveEnteredExistAdminLogin()
         {
             actionsLoginPage.enterLogin(loginPageData.adminLogin);
         }
-        
+
         [Given(@"I have entered Exist Admin Password")]
         public void GivenIHaveEnteredExistAdminPassword()
         {
             actionsLoginPage.enterPassword(loginPageData.adminPass);
         }
-        
+
         [Given(@"I have entered Exist Editor Login")]
         public void GivenIHaveEnteredExistEditorLogin()
         {
@@ -54,95 +57,118 @@ namespace zonarNunit
         {
             actionsLoginPage.enterPassword(loginPageData.editorPass);
         }
-        
+
         [When(@"I have Open My Buildings Tab")]
         public void WhenIHaveOpenMyBuildingsTab()
         {
-            ScenarioContext.Current.Pending();
+            actionsAccountPages.openedMyBuildingsTab();
         }
-        
+
         [When(@"I open Existed Building")]
         public void WhenIOpenExistedBuilding()
         {
-            ScenarioContext.Current.Pending();
+            actionsAccountPages.clickOpenProjectButton();
         }
-        
+
         [When(@"I Have Open Base Codes Tab")]
         public void WhenIHaveOpenBaseCodesTab()
         {
-            ScenarioContext.Current.Pending();
+            actionsAccountPages.openedBaseCodesTab();
         }
-        
+
         [When(@"I open Calibration Tab")]
         public void WhenIOpenCalibrationTab()
         {
-            ScenarioContext.Current.Pending();
+            actionsProjectPage.CalibrationTabIsAvailable();
         }
-        
+
         [When(@"I open User Management Tab")]
         public void WhenIOpenUserManagementTab()
         {
-            ScenarioContext.Current.Pending();
+            actionsAccountPages.UsersManagementTabIsAvailable();
         }
-        
+
         [Then(@"I don't see User Management Tab")]
         public void ThenIDonTSeeUserManagementTab()
         {
-            ScenarioContext.Current.Pending();
+            actionsAccountPages.UsersManagementTabIsNotAvailable();
         }
-        
+
         [Then(@"I don't see Calibration Tab")]
         public void ThenIDonTSeeCalibrationTab()
         {
-            ScenarioContext.Current.Pending();
+            actionsProjectPage.CalibrationTabIsNotAvailable();
         }
-        
+
         [Then(@"Clone Button is absent")]
         public void ThenCloneButtonIsAbsent()
         {
-            ScenarioContext.Current.Pending();
+            actionsAccountPages.checkCodeClonButtonAbsent();
+
         }
-        
+
         [Then(@"Clone to Custon Codes Button is absent")]
         public void ThenCloneToCustonCodesButtonIsAbsent()
         {
-            ScenarioContext.Current.Pending();
+            actionsAccountPages.checkCodeClonCustomButtonAbsent();
+
         }
-        
+
         [Then(@"Check-boxes on Base Codes Tab is absent")]
         public void ThenCheck_BoxesOnBaseCodesTabIsAbsent()
         {
-            ScenarioContext.Current.Pending();
+            actionsAccountPages.checkCodeCheckBoxExists();
+
         }
-        
+
         [Then(@"I have Opened Calibration Tab")]
         public void ThenIHaveOpenedCalibrationTab()
         {
-            ScenarioContext.Current.Pending();
+            actionsProjectPage.CalibrationTabIsOpened();
         }
-        
+
         [Then(@"I have opened User Management Tab")]
         public void ThenIHaveOpenedUserManagementTab()
         {
-            ScenarioContext.Current.Pending();
+            actionsAccountPages.openedUsersManagementTab();
         }
-        
+
+        [Then(@"Base Code exists")]
+        public void ThenBaseCodeExists()
+        {
+            actionsAccountPages.checkBaseCodeExists();
+        }
+
         [Then(@"Clone Button is present")]
         public void ThenCloneButtonIsPresent()
         {
-            ScenarioContext.Current.Pending();
+            actionsAccountPages.checkCodeClonButtonExists();
         }
-        
+
         [Then(@"Clone to Custon Codes Button is present")]
         public void ThenCloneToCustonCodesButtonIsPresent()
         {
-            ScenarioContext.Current.Pending();
+            actionsAccountPages.checkCodeCloneCustomButtonExists();
         }
-        
+
         [Then(@"Check-boxes on Base Codes Tab is present")]
         public void ThenCheck_BoxesOnBaseCodesTabIsPresent()
         {
-            ScenarioContext.Current.Pending();
+            actionsAccountPages.checkCodeCheckBoxExists();
+
         }
+
+        [Then(@"I Close Clone Code Popup")]
+        public void ThenICloseCloneCodePopup()
+        {
+            actionsAccountPages.CloseCodeClonButton();
+        }
+
+        [Then(@"I Close Clone Custom Code Popup")]
+        public void ThenICloseCloneCustomCodePopup()
+        {
+            actionsAccountPages.CloseCodeClonCustomButton();
+        }
+
     }
 }

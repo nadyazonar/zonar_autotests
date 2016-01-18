@@ -34,6 +34,8 @@ namespace zonarNunit.Action
 
         public void checkOpeningAccountPage()
         {
+            waitForElementPresent(AccountPageLocators.createBuildingButton);
+            driver.FindElement(AccountPageLocators.createBuildingButton);
             driver.FindElement(AccountPageLocators.logo);
 
         }
@@ -54,6 +56,170 @@ namespace zonarNunit.Action
             //}
             driver.FindElement(AccountPageLocators.accountSettings).Click();
         }
+
+        public void openedBaseCodesTab()
+        {
+            waitForElementPresent(AccountPageLocators.baseCodes);
+            driver.FindElement(AccountPageLocators.baseCodes).Click();
+        }
+
+        public void checkBaseCodeExists()
+        {
+            waitForElementPresent(AccountPageLocators.codeLabel);
+            driver.FindElement(AccountPageLocators.codeLabel);
+        }
+
+        public void checkCodeClonButtonExists()
+        {
+            IWebElement parent = null;
+            IWebElement parent1 = null;
+            IList<IWebElement> divs = driver.FindElements(By.CssSelector(".select-module.p1"));
+            foreach (IWebElement div in divs)
+            {
+                IList<IWebElement> labels = div.FindElements(By.TagName("label"));
+                foreach (IWebElement label in labels)
+                {
+                    if (label.Text.Contains("Miami"))
+                    {
+                        parent = label.FindElement(By.XPath(".."));
+                        parent1 = parent.FindElement(By.XPath("div/div[2]/div/div[1]/a"));
+
+
+                    }
+                }
+            }
+            Thread.Sleep(3000);
+            Assert.AreEqual(true, isElementPresent(parent1));
+            Thread.Sleep(3000);
+        }
+
+        public void checkCodeClonButtonAbsent()
+        {
+            IWebElement parent = null;
+            IWebElement parent1 = null;
+            IList<IWebElement> divs = driver.FindElements(By.CssSelector(".select-module.p1"));
+            foreach (IWebElement div in divs)
+            {
+                IList<IWebElement> labels = div.FindElements(By.TagName("label"));
+                foreach (IWebElement label in labels)
+                {
+                    if (label.Text.Contains("Miami"))
+                    {
+                        parent = label.FindElement(By.XPath(".."));
+                        parent1 = parent.FindElement(By.XPath("div/div[2]/div/div[1]/a"));
+
+
+                    }
+                }
+            }
+            Assert.AreEqual(false, isElementPresent(parent1));
+
+        }
+
+
+        public void checkCodeCloneCustomButtonExists()
+        {
+
+            IWebElement parent = null;
+            IWebElement parent1 = null;
+            IList<IWebElement> divs = driver.FindElements(By.CssSelector(".select-module.p1"));
+            foreach (IWebElement div in divs)
+            {
+                IList<IWebElement> labels = div.FindElements(By.TagName("label"));
+                foreach (IWebElement label in labels)
+                {
+                    if (label.Text.Contains("Miami"))
+                    {
+                        parent = label.FindElement(By.XPath(".."));
+                        parent1 = parent.FindElement(By.XPath("div/div[2]/div/div[2]/a"));
+                    }
+                }
+            }
+
+            Thread.Sleep(3000);
+            Assert.AreEqual(true, isElementPresent(parent1));
+            Thread.Sleep(3000);
+        }
+
+        public void checkCodeClonCustomButtonAbsent()
+        {
+            IWebElement parent = null;
+            IWebElement parent1 = null;
+            IList<IWebElement> divs = driver.FindElements(By.CssSelector(".select-module.p1"));
+            foreach (IWebElement div in divs)
+            {
+                IList<IWebElement> labels = div.FindElements(By.TagName("label"));
+                foreach (IWebElement label in labels)
+                {
+                    if (label.Text.Contains("Miami"))
+                    {
+                        parent = label.FindElement(By.XPath(".."));
+                        parent1 = parent.FindElement(By.XPath("div/div[2]/div/div[2]/a"));
+                    }
+                }
+            }
+
+            Assert.AreEqual(false, isElementPresent(parent1));
+
+        }
+
+        public void CloseCodeClonButton()
+        {
+            waitForElementPresent(AccountPageLocators.closeCodeClonePopup);
+            driver.FindElement(AccountPageLocators.closeCodeClonePopup).Click();
+        }
+
+        public void CloseCodeClonCustomButton()
+        {
+            waitForElementPresent(AccountPageLocators.closeCodeClonePopup);
+            driver.FindElement(AccountPageLocators.closeCodeClonePopup).Click();
+        }
+
+
+        public void checkCodeCheckBoxExists()
+        {
+            waitForElementPresent(AccountPageLocators.codeCheckBox);
+            driver.FindElement(AccountPageLocators.codeCheckBox);
+        }
+
+        public void openedMyBuildingsTab()
+        {
+            waitForElementPresent(AccountPageLocators.myBuilding);
+            driver.FindElement(AccountPageLocators.myBuilding).Click();
+        }
+
+        public void UsersManagementTabIsAvailable()
+        {
+
+            Assert.AreEqual(true, accountLinkIsAvailable("Users Management"));
+        }
+
+        public void UsersManagementTabIsNotAvailable()
+        {
+
+            Assert.AreEqual(false, accountLinkIsAvailable("Users Management"));
+
+        }
+
+        public void openedUsersManagementTab()
+        {
+            waitForElementPresent(AccountPageLocators.managementTable);
+            driver.FindElement(AccountPageLocators.managementTable).Click();
+
+        }
+
+        public void clickOpenProjectButton()
+        {
+            waitForElementPresent(AccountPageLocators.openProjectLink);
+            driver.FindElement(AccountPageLocators.openProjectLink).Click();
+
+        }
+
+
+
+
+
+
 
         public void setNewNameOnFirstNameAndLastNameField()
         {
@@ -103,18 +269,20 @@ namespace zonarNunit.Action
 
         public void iHaveOpenedMyBuildingsTab()
         {
-            driver.Manage().Timeouts().SetPageLoadTimeout(new TimeSpan(0, 0, 20));
-            for (int second = 0; ; second++)
-            {
-                if (second >= 60) Assert.Fail("timeout");
-                try
-                {
-                    if (IsElementPresent(By.LinkText("My Buildings"))) break;
-                }
-                catch (Exception)
-                { }
-                Thread.Sleep(1000);
-            }
+
+            waitForElementPresent(By.LinkText("My Buildings"));
+            //driver.Manage().Timeouts().SetPageLoadTimeout(new TimeSpan(0, 0, 20));
+            //for (int second = 0; ; second++)
+            //{
+            //    if (second >= 60) Assert.Fail("timeout");
+            //    try
+            //    {
+            //        if (IsElementPresent(By.LinkText("My Buildings"))) break;
+            //    }
+            //    catch (Exception)
+            //    { }
+            //    Thread.Sleep(1000);
+            //}
 
             driver.FindElement(By.LinkText("My Buildings")).Click();
 

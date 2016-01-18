@@ -37,7 +37,7 @@ Scenario: BasicRolePermissionsBaseCodes
  When I Have Open Base Codes Tab
  Then Clone Button is absent
  And Clone to Custon Codes Button is absent
- And Check-boxes on Base Codes Tab is absent
+ And Check-boxes on Base Codes Tab is present
  
  @Roles @Smoke
 Scenario: ProRolePermissionsUserManagement
@@ -102,8 +102,11 @@ Scenario: AdminRolePermissionsBaseCodes
  When I press Login Button
  Then The result Account Page is Opened
  When I Have Open Base Codes Tab
- Then Clone Button is present
+ Then Base Code exists
+ And Clone Button is present
+ And I Close Clone Code Popup
  And Clone to Custon Codes Button is present
+ And I Close Clone Custom Code Popup
  And Check-boxes on Base Codes Tab is present
 
  @Roles @Smoke
@@ -136,6 +139,9 @@ Scenario: EditorRolePermissionsBaseCodes
  When I press Login Button
  Then The result Account Page is Opened
  When I Have Open Base Codes Tab
- Then Clone Button is present
+ Then Base Code exists
+ And Clone Button is present
+ And I Close Clone Code Popup
  And Clone to Custon Codes Button is present
+ And I Close Clone Custom Code Popup
  And Check-boxes on Base Codes Tab is present

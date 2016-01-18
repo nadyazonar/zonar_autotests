@@ -42,11 +42,33 @@ namespace zonarNunit.Data
     {
 
         // Expected result
-        public static MaximumLotCapacity maimi = new MaximumLotCapacity("90,000 ft²", "2.067 acres", "150 du/acre", "310 DU",
-            "11", "80 %", "10 %", "8 Levels", "2 Levels", "48 Levels", "990,000 ft²", "990,000 ft²");
+        public static MaximumLotCapacity maimi = new MaximumLotCapacity(
+                                                                        "90,000 ft²",
+                                                                        "2.067 acres",
+                                                                        "150 du/acre",
+                                                                        "310 DU",
+                                                                        "11",
+                                                                        "80 %",
+                                                                        "10 %",
+                                                                        "8 Levels",
+                                                                        "2 Levels",
+                                                                        "48 Levels",
+                                                                        "990,000 ft²",
+                                                                        "990,000 ft²");
 
-        public static MaximumLotCapacity maimi1 = new MaximumLotCapacity("90,000 ft²", "2.067 acres", "150 du/acre", "310 DU",
-            "11", "80 %", "10 %", "8 Levels", "2 Levels", "48 Levels", "990,000 ft²", "990,000 ft²");
+        public static MaximumLotCapacity maimi1 = new MaximumLotCapacity(
+                                                                        "90,000 ft²",
+                                                                        "2.067 acres",
+                                                                        "150 du/acre",
+                                                                        "310 DU",
+                                                                        "11",
+                                                                        "80 %",
+                                                                        "10 %",
+                                                                        "8 Levels",
+                                                                        "2 Levels",
+                                                                        "48 Levels",
+                                                                        "990,000 ft²",
+                                                                        "990,000 ft²");
 
 
         public string LotAreaNet { get; set; }
@@ -102,8 +124,19 @@ namespace zonarNunit.Data
         }
 
         // fields names 
-        public static MaximumLotCapacity maximumLotCapacity = new MaximumLotCapacity("Lot Area Net", "Lot Area Acres", "Residential Density", "DU Allowed", "FAR",
-                "Lot Coverage", "Min Open Space", "Principal Building Max Height", "Principal Building Min Height", "Principal Tower Height", "Max Built Area", "Max Building Area");
+        public static MaximumLotCapacity maximumLotCapacity = new MaximumLotCapacity(
+                                                                "Lot Area Net",
+                                                                "Lot Area Acres",
+                                                                "Residential Density",
+                                                                "DU Allowed",
+                                                                "FAR",
+                                                                "Lot Coverage",
+                                                                "Min Open Space",
+                                                                "Principal Building Max Height",
+                                                                "Principal Building Min Height",
+                                                                "Principal Tower Height",
+                                                                "Max Built Area",
+                                                                "Max Building Area");
 
 
         
@@ -256,9 +289,6 @@ namespace zonarNunit.Data
 
 
     }
-
-
-
 }
 
 

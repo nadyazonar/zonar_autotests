@@ -14,7 +14,7 @@ namespace zonarNunit.ActionsLoginPage
 
         public void iClickSaveButton()
         {
-            waitForElementPresent(By.XPath(".//*[@id='panel-right-1']/div[1]/span[2]"));
+            
             waitForElementPresent(ProjectPageLocators.saveButton);
             driver.FindElement(ProjectPageLocators.saveButton).Click();
         }
@@ -32,56 +32,94 @@ namespace zonarNunit.ActionsLoginPage
             waitForElementPresent(ProjectPageLocators.calibration);
         }
 
+        public void CalibrationTabIsAvailable()
+        {
+            waitForElementPresent(ProjectPageLocators.calibration);
+            driver.FindElement(ProjectPageLocators.calibration).Click();
+        }
+
+        public void CalibrationTabIsNotAvailable()
+        {
+            Assert.AreEqual(false, isElementPresent(ProjectPageLocators.calibration));
+        }
+
+        public void CalibrationTabIsOpened()
+        {
+            waitForElementPresent(ProjectPageLocators.calibrationContainer);
+            waitForElementPresent(ProjectPageLocators.calibrationModules);
+            waitForElementPresent(ProjectPageLocators.calibrationComponents);
+            waitForElementPresent(ProjectPageLocators.calibrationZones);
+            waitForElementPresent(ProjectPageLocators.calibrationUses);
+            driver.FindElement(ProjectPageLocators.calibrationContainer).Click();
+            driver.FindElement(ProjectPageLocators.calibrationModules).Click();
+            driver.FindElement(ProjectPageLocators.calibrationComponents).Click();
+            driver.FindElement(ProjectPageLocators.calibrationZones).Click();
+            driver.FindElement(ProjectPageLocators.calibrationUses).Click();
+        }
+
+
+
         public void iHaveOpenedTabCapacityAnalysis()
         {
             driver.FindElement(ProjectPageLocators.capacityAnalysis).Click();
-            waitForElementPresent(By.XPath(".//*[a='Parking']"));
-            waitForElementPresent(By.XPath(".//*[a='Use Program']"));
+            waitForElementPresent(ProjectPageLocators.parkingTab);
+            waitForElementPresent(ProjectPageLocators.useProgramTab);
             // add checking please
 
             System.Threading.Thread.Sleep(1000);
-            driver.FindElement(By.XPath(".//*[a='Use Program']")).Click();
+            driver.FindElement(ProjectPageLocators.useProgramTab).Click();
 
         }
 
         public void iHaveOpenedTabZoningAllowances()
         {
+            var tabList = new List<string>();
+            var tabListTamplate = new List<string>();
+
+            tabListTamplate.Add("Lot Information");
+            tabListTamplate.Add("Location Variables");
+            tabListTamplate.Add("Additional Options");
+
 
             System.Threading.Thread.Sleep(2000);
 
             ICollection<IWebElement> tabs = driver.FindElements(By.ClassName("accordian-title"));
             foreach (IWebElement tab in tabs)
             {
-                
+
                 if (tab.Text.Equals("Lot Information"))
                 {
                     var text = tab.Text;
-                    break;
+                    tabList.Add(text);
+
                 }
                 else
                 {
-                    if (tab.Text.Equals("LocationVariables"))
+                    if (tab.Text.Equals("Location Variables"))
                     {
                         var text = tab.Text;
-                        break;
+                        tabList.Add(text);
                     }
                     else
                     {
                         if (tab.Text.Equals("Additional Options"))
                         {
                             var text = tab.Text;
-                            break;
-                        }  
+                            tabList.Add(text);
+                        }
                     }
-                    
-                    
+
 
                 }
+                
+
             }
+            Assert.AreEqual(tabListTamplate, tabList);
         }
 
         public void iHaveOpenedResuktTableOnCapacityAnalisisTab()
         {
+            waitForElementPresent(ProjectPageLocators.resultTableCapacityTab);
             driver.FindElement(ProjectPageLocators.resultTableCapacityTab).Click();
         }
 
@@ -127,7 +165,7 @@ namespace zonarNunit.ActionsLoginPage
 
                         result.Add(value);
 
-                        Console.Write(name + "    " + result[i]);
+                        Console.Write("                 " + name + "   -   " + result[i] + "\r\n");
                         i += 1;
                         break;
 
@@ -171,7 +209,9 @@ namespace zonarNunit.ActionsLoginPage
             {
                 if (inputData == "templateMaimi1")
                 {
+
                     Assert.AreEqual(zonarNunit.Data.MaximumLotCapacity.maimi1.BuildingCreationsParametersTemplateArray, result);
+                    
                 }
                 else
                 {

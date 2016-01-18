@@ -17,7 +17,8 @@ namespace zonarNunit
 
         [Given(@"I have Opened My Buildings Tab")]
         public void GivenIHaveOpenedMyBuildingsTab()
-        {            actionsAccountPages.iHaveOpenedMyBuildingsTab();
+        {
+            actionsAccountPages.iHaveOpenedMyBuildingsTab();
             actionsAccountPages.getOldList();
 
         }
