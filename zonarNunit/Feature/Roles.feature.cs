@@ -120,8 +120,10 @@ this.ScenarioSetup(scenarioInfo);
 #line 26
  testRunner.When("I have Open My Buildings Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 27
- testRunner.And("I open Existed Building", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I Click Create building Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 28
+ testRunner.And("I Fill-in Fields on Create buildings form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 29
  testRunner.Then("I don\'t see Calibration Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -136,26 +138,26 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("BasicRolePermissionsBaseCodes", new string[] {
                         "Roles",
                         "Smoke"});
-#line 31
-this.ScenarioSetup(scenarioInfo);
 #line 32
- testRunner.Given("I have Opened Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 33
- testRunner.And("I have entered Exist Basic Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have Opened Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 34
- testRunner.And("I have entered Exist Basic Password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I have entered Exist Basic Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35
- testRunner.When("I press Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I have entered Exist Basic Password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 36
- testRunner.Then("The result Account Page is Opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I press Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 37
- testRunner.When("I Have Open Base Codes Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("The result Account Page is Opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 38
- testRunner.Then("Clone Button is absent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I Have Open Base Codes Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 39
- testRunner.And("Clone to Custon Codes Button is absent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("Clone Button is absent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 40
- testRunner.And("Check-boxes on Base Codes Tab is absent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Clone to Custon Codes Button is absent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 41
+ testRunner.And("Check-boxes on Base Codes Tab is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -169,19 +171,19 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("ProRolePermissionsUserManagement", new string[] {
                         "Roles",
                         "Smoke"});
-#line 43
-this.ScenarioSetup(scenarioInfo);
 #line 44
- testRunner.Given("I have Opened Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 45
- testRunner.And("I have entered Exist Pro Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have Opened Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 46
- testRunner.And("I have entered Exist Pro Password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I have entered Exist Pro Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 47
- testRunner.When("I press Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I have entered Exist Pro Password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 48
- testRunner.Then("The result Account Page is Opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I press Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 49
+ testRunner.Then("The result Account Page is Opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 50
  testRunner.And("I don\'t see User Management Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -196,25 +198,27 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("ProRolePermissionsCalibration", new string[] {
                         "Roles",
                         "Smoke"});
-#line 52
-this.ScenarioSetup(scenarioInfo);
 #line 53
- testRunner.Given("I have Opened Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 54
- testRunner.And("I have entered Exist Pro Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have Opened Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 55
- testRunner.And("I have entered Exist Pro Password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I have entered Exist Pro Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 56
- testRunner.When("I press Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I have entered Exist Pro Password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 57
- testRunner.Then("The result Account Page is Opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I press Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 58
- testRunner.When("I have Open My Buildings Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("The result Account Page is Opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 59
- testRunner.And("I open Existed Building", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I have Open My Buildings Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 60
- testRunner.And("I open Calibration Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I Click Create building Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 61
+ testRunner.And("I Fill-in Fields on Create buildings form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 62
+ testRunner.And("I open Calibration Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 63
  testRunner.Then("I have Opened Calibration Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -229,25 +233,25 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("ProRolePermissionsBaseCodes", new string[] {
                         "Roles",
                         "Smoke"});
-#line 64
-this.ScenarioSetup(scenarioInfo);
-#line 65
- testRunner.Given("I have Opened Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 66
- testRunner.And("I have entered Exist Pro Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 67
- testRunner.And("I have entered Exist Pro Password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have Opened Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 68
- testRunner.When("I press Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I have entered Exist Pro Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 69
- testRunner.Then("The result Account Page is Opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I have entered Exist Pro Password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 70
- testRunner.When("I Have Open Base Codes Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I press Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 71
- testRunner.Then("Clone Button is absent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("The result Account Page is Opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 72
- testRunner.And("Clone to Custon Codes Button is absent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I Have Open Base Codes Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 73
+ testRunner.Then("Clone Button is absent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 74
+ testRunner.And("Clone to Custon Codes Button is absent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 75
  testRunner.And("Check-boxes on Base Codes Tab is absent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -262,21 +266,21 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("AdminRolePermissionsUserManagement", new string[] {
                         "Roles",
                         "Smoke"});
-#line 76
-this.ScenarioSetup(scenarioInfo);
-#line 77
- testRunner.Given("I have Opened Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 78
- testRunner.And("I have entered Exist Admin Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 79
- testRunner.And("I have entered Exist Admin Password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have Opened Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 80
- testRunner.When("I press Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I have entered Exist Admin Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 81
- testRunner.Then("The result Account Page is Opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I have entered Exist Admin Password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 82
- testRunner.When("I open User Management Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I press Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 83
+ testRunner.Then("The result Account Page is Opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 84
+ testRunner.When("I open User Management Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 85
  testRunner.Then("I have opened User Management Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -291,25 +295,27 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("AdminRolePermissionsCalibration", new string[] {
                         "Roles",
                         "Smoke"});
-#line 86
-this.ScenarioSetup(scenarioInfo);
-#line 87
- testRunner.Given("I have Opened Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 88
- testRunner.And("I have entered Exist Admin Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 89
- testRunner.And("I have entered Exist Admin Password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have Opened Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 90
- testRunner.When("I press Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I have entered Exist Admin Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 91
- testRunner.Then("The result Account Page is Opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I have entered Exist Admin Password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 92
- testRunner.Given("I have Opened My Buildings Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.When("I press Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 93
- testRunner.When("I open Existed Building", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("The result Account Page is Opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 94
- testRunner.And("I open Calibration Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I have Open My Buildings Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 95
+ testRunner.And("I Click Create building Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 96
+ testRunner.And("I Fill-in Fields on Create buildings form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 97
+ testRunner.And("I open Calibration Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 98
  testRunner.Then("I have Opened Calibration Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -324,25 +330,31 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("AdminRolePermissionsBaseCodes", new string[] {
                         "Roles",
                         "Smoke"});
-#line 98
-this.ScenarioSetup(scenarioInfo);
-#line 99
- testRunner.Given("I have Opened Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 100
- testRunner.And("I have entered Exist Admin Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 101
- testRunner.And("I have entered Exist Admin Password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 102
- testRunner.When("I press Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("I have Opened Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 103
- testRunner.Then("The result Account Page is Opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I have entered Exist Admin Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 104
- testRunner.When("I Have Open Base Codes Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I have entered Exist Admin Password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 105
- testRunner.Then("Clone Button is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I press Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 106
- testRunner.And("Clone to Custon Codes Button is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("The result Account Page is Opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 107
+ testRunner.When("I Have Open Base Codes Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 108
+ testRunner.Then("Base Code exists", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 109
+ testRunner.And("Clone Button is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 110
+ testRunner.And("I Close Clone Code Popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 111
+ testRunner.And("Clone to Custon Codes Button is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 112
+ testRunner.And("I Close Clone Custom Code Popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 113
  testRunner.And("Check-boxes on Base Codes Tab is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -357,21 +369,21 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EditorRolePermissionsUserManagement", new string[] {
                         "Roles",
                         "Smoke"});
-#line 110
-this.ScenarioSetup(scenarioInfo);
-#line 111
- testRunner.Given("I have Opened Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 112
- testRunner.And("I have entered Exist Editor Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 113
- testRunner.And("I have entered Exist Editor Password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 114
- testRunner.When("I press Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 115
- testRunner.Then("The result Account Page is Opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 116
- testRunner.When("I open User Management Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
 #line 117
+ testRunner.Given("I have Opened Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 118
+ testRunner.And("I have entered Exist Editor Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 119
+ testRunner.And("I have entered Exist Editor Password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 120
+ testRunner.When("I press Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 121
+ testRunner.Then("The result Account Page is Opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 122
+ testRunner.When("I open User Management Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 123
  testRunner.Then("I have opened User Management Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -386,25 +398,27 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EditorRolePermissionsCalibration", new string[] {
                         "Roles",
                         "Smoke"});
-#line 120
-this.ScenarioSetup(scenarioInfo);
-#line 121
- testRunner.Given("I have Opened Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 122
- testRunner.And("I have entered Exist Editor Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 123
- testRunner.And("I have entered Exist Editor Password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 124
- testRunner.When("I press Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 125
- testRunner.Then("The result Account Page is Opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 126
- testRunner.When("I have Open My Buildings Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
 #line 127
- testRunner.And("I open Existed Building", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have Opened Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 128
- testRunner.And("I open Calibration Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I have entered Exist Editor Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 129
+ testRunner.And("I have entered Exist Editor Password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 130
+ testRunner.When("I press Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 131
+ testRunner.Then("The result Account Page is Opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 132
+ testRunner.When("I have Open My Buildings Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 133
+ testRunner.When("I Click Create building Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 134
+ testRunner.And("I Fill-in Fields on Create buildings form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 135
+ testRunner.And("I open Calibration Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 136
  testRunner.Then("I have Opened Calibration Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -419,25 +433,31 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EditorRolePermissionsBaseCodes", new string[] {
                         "Roles",
                         "Smoke"});
-#line 132
-this.ScenarioSetup(scenarioInfo);
-#line 133
- testRunner.Given("I have Opened Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 134
-    testRunner.And("I have entered Exist Editor Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 135
- testRunner.And("I have entered Exist Editor Password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 136
- testRunner.When("I press Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 137
- testRunner.Then("The result Account Page is Opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 138
- testRunner.When("I Have Open Base Codes Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 139
- testRunner.Then("Clone Button is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+this.ScenarioSetup(scenarioInfo);
 #line 140
- testRunner.And("Clone to Custon Codes Button is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have Opened Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 141
+ testRunner.And("I have entered Exist Editor Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 142
+ testRunner.And("I have entered Exist Editor Password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 143
+ testRunner.When("I press Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 144
+ testRunner.Then("The result Account Page is Opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 145
+ testRunner.When("I Have Open Base Codes Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 146
+ testRunner.Then("Base Code exists", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 147
+ testRunner.And("Clone Button is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 148
+ testRunner.And("I Close Clone Code Popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 149
+ testRunner.And("Clone to Custon Codes Button is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 150
+ testRunner.And("I Close Clone Custom Code Popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 151
  testRunner.And("Check-boxes on Base Codes Tab is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

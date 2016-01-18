@@ -24,7 +24,8 @@ Scenario: BasicRolePermissionsCalibration
  When I press Login Button
  Then The result Account Page is Opened
  When I have Open My Buildings Tab
- And I open Existed Building
+ And I Click Create building Button
+ And I Fill-in Fields on Create buildings form
  Then I don't see Calibration Tab
 
  @Roles @Smoke
@@ -37,7 +38,7 @@ Scenario: BasicRolePermissionsBaseCodes
  When I Have Open Base Codes Tab
  Then Clone Button is absent
  And Clone to Custon Codes Button is absent
- And Check-boxes on Base Codes Tab is absent
+ And Check-boxes on Base Codes Tab is present
  
  @Roles @Smoke
 Scenario: ProRolePermissionsUserManagement
@@ -56,7 +57,8 @@ Scenario: ProRolePermissionsCalibration
  When I press Login Button
  Then The result Account Page is Opened
  When I have Open My Buildings Tab
- And I open Existed Building
+ And I Click Create building Button
+ And I Fill-in Fields on Create buildings form
  And I open Calibration Tab
  Then I have Opened Calibration Tab
 
@@ -89,8 +91,9 @@ Scenario: AdminRolePermissionsCalibration
  And I have entered Exist Admin Password
  When I press Login Button
  Then The result Account Page is Opened
- Given I have Opened My Buildings Tab
- When I open Existed Building
+ When I have Open My Buildings Tab
+ And I Click Create building Button
+ And I Fill-in Fields on Create buildings form
  And I open Calibration Tab
  Then I have Opened Calibration Tab
 
@@ -102,8 +105,11 @@ Scenario: AdminRolePermissionsBaseCodes
  When I press Login Button
  Then The result Account Page is Opened
  When I Have Open Base Codes Tab
- Then Clone Button is present
+ Then Base Code exists
+ And Clone Button is present
+ And I Close Clone Code Popup
  And Clone to Custon Codes Button is present
+ And I Close Clone Custom Code Popup
  And Check-boxes on Base Codes Tab is present
 
  @Roles @Smoke
@@ -124,18 +130,22 @@ Scenario: EditorRolePermissionsCalibration
  When I press Login Button
  Then The result Account Page is Opened
  When I have Open My Buildings Tab
- And I open Existed Building
+ When I Click Create building Button
+ And I Fill-in Fields on Create buildings form
  And I open Calibration Tab
  Then I have Opened Calibration Tab
 
  @Roles @Smoke
 Scenario: EditorRolePermissionsBaseCodes
  Given I have Opened Login Page
-    And I have entered Exist Editor Login
+ And I have entered Exist Editor Login
  And I have entered Exist Editor Password
  When I press Login Button
  Then The result Account Page is Opened
  When I Have Open Base Codes Tab
- Then Clone Button is present
+ Then Base Code exists
+ And Clone Button is present
+ And I Close Clone Code Popup
  And Clone to Custon Codes Button is present
+ And I Close Clone Custom Code Popup
  And Check-boxes on Base Codes Tab is present

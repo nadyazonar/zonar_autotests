@@ -55,7 +55,7 @@ namespace zonarNunit
         [Then(@"The result Account Page is Opened")]
         public void ThenTheResultAccountPageIsOpened()
         {
-            
+            System.Threading.Thread.Sleep(3000);
         }
 
         [Then(@"I see my name in a conner")]

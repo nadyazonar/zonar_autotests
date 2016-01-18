@@ -202,5 +202,37 @@ namespace zonarNunit.ActionsLoginPage
         }
 
 
+
+
+        //roles merge
+        public void CalibrationTabIsOpened()
+        {
+            waitForElementPresent(ProjectPageLocators.calibrationContainer);
+            waitForElementPresent(ProjectPageLocators.calibrationModules);
+            waitForElementPresent(ProjectPageLocators.calibrationComponents);
+            waitForElementPresent(ProjectPageLocators.calibrationZones);
+            waitForElementPresent(ProjectPageLocators.calibrationUses);
+            driver.FindElement(ProjectPageLocators.calibrationContainer).Click();
+            driver.FindElement(ProjectPageLocators.calibrationModules).Click();
+            driver.FindElement(ProjectPageLocators.calibrationComponents).Click();
+            driver.FindElement(ProjectPageLocators.calibrationZones).Click();
+            driver.FindElement(ProjectPageLocators.calibrationUses).Click();
+        }
+
+
+        public void CalibrationTabIsNotAvailable()
+        {
+            Assert.AreEqual(false, isElementPresent(ProjectPageLocators.calibration));
+        }
+
+
+        public void CalibrationTabIsAvailable()
+        {
+            waitForElementPresent(ProjectPageLocators.calibration);
+            driver.FindElement(ProjectPageLocators.calibration).Click();
+        }
+
+
+        //RolesSteps merge end
     }
 }

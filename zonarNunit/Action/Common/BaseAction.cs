@@ -43,9 +43,6 @@ namespace zonarNunit.Action
         protected AccountPageData dataAccountPage = new AccountPageData();
 
         //Building parameters
-        
-
-
         protected AccountPageLocators locatorsAccount = new zonarNunit.Locators.AccountPageLocators();
         protected ProjectPageLocators locarorsBuildingCreation = new ProjectPageLocators();
         
@@ -71,15 +68,12 @@ namespace zonarNunit.Action
             }
         }
 
-
-
         public bool findCharInString(string strin, string value)
             {
                 string str = strin;
                 bool result = str.Contains(value);
                 return result;
             }
-
 
         //additional method
         public static bool IsElementPresent(By by)
@@ -95,6 +89,18 @@ namespace zonarNunit.Action
             }
         }
 
+        public bool isElementPresent(IWebElement elememt)
+        {
+            try
+            {
+                elememt.Click();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
         public void waitUntilElementPresent(By locator)
         {
@@ -186,7 +192,6 @@ namespace zonarNunit.Action
             return list;
         }
 
-
         public static void setBuildingParametersOnCapacityTab(string nameParameter, string value)
         {
             IWebElement parent = null;
@@ -217,13 +222,20 @@ namespace zonarNunit.Action
          
 
         }
-       
 
-
-
-                 
-            
-
+        public bool isElementPresent(By locator)
+        {
+            try
+            {
+                Thread.Sleep(3000);
+                driver.FindElement(locator).Click();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
         public static void logout()
         {
@@ -241,10 +253,31 @@ namespace zonarNunit.Action
 
         }
 
+        //roles merge
+        public bool accountLinkIsAvailable(string tabName)
+        {
+            bool accountLinkIsAvailable = false;
 
+            IList<IWebElement> divs = driver.FindElements(By.CssSelector(".account-side-nav.no-margin.hide-for-small-only"));
+            foreach (IWebElement div in divs)
+            {
+                IList<IWebElement> links = div.FindElements(By.TagName("a"));
+                foreach (IWebElement link in links)
+                {
+                    if (link.Text.Contains(tabName))
+                    {
+                        link.Click();
+                        Thread.Sleep(3000);
+                        accountLinkIsAvailable = true;
+                    }
 
+                }
 
+            }
+            return accountLinkIsAvailable;
 
+        }
+        //roles merge end
     }
 
 }
