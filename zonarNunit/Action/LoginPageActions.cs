@@ -5,8 +5,6 @@ using zonarNunit.Locators;
 
 
 
-
-
 namespace zonarNunit.ActionsLoginPage
 {
     public class LoginPageActions : BaseAction
