@@ -103,18 +103,20 @@ namespace zonarNunit.Action
 
         public void iHaveOpenedMyBuildingsTab()
         {
-            driver.Manage().Timeouts().SetPageLoadTimeout(new TimeSpan(0, 0, 20));
-            for (int second = 0; ; second++)
-            {
-                if (second >= 60) Assert.Fail("timeout");
-                try
-                {
-                    if (IsElementPresent(By.LinkText("My Buildings"))) break;
-                }
-                catch (Exception)
-                { }
-                Thread.Sleep(1000);
-            }
+
+            waitForElementPresent(By.LinkText("My Buildings"));
+            //driver.Manage().Timeouts().SetPageLoadTimeout(new TimeSpan(0, 0, 20));
+            //for (int second = 0; ; second++)
+            //{
+            //    if (second >= 60) Assert.Fail("timeout");
+            //    try
+            //    {
+            //        if (IsElementPresent(By.LinkText("My Buildings"))) break;
+            //    }
+            //    catch (Exception)
+            //    { }
+            //    Thread.Sleep(1000);
+            //}
 
             driver.FindElement(By.LinkText("My Buildings")).Click();
 
@@ -132,7 +134,7 @@ namespace zonarNunit.Action
         public void iClickCreateBuildingButton()
         {
             waitForElementPresent(AccountPageLocators.createBuildingButton);
-            waitForElementPresent(AccountPageLocators.myAccount);
+           // waitForElementPresent(AccountPageLocators.myAccount);
             driver.FindElement(AccountPageLocators.createBuildingButton).Click();
 
         }

@@ -17,7 +17,8 @@ namespace zonarNunit
 
         [Given(@"I have Opened My Buildings Tab")]
         public void GivenIHaveOpenedMyBuildingsTab()
-        {            actionsAccountPages.iHaveOpenedMyBuildingsTab();
+        {
+            actionsAccountPages.iHaveOpenedMyBuildingsTab();
             actionsAccountPages.getOldList();
 
         }
@@ -29,7 +30,7 @@ namespace zonarNunit
             actionsAccountPages.iHaveOpenedMyBuildingsTab();
             actionsAccountPages.iClickCreateBuildingButton();
             actionsAccountPages.iFillInFieldsOnCreateBuildingsForm(BuildingCreationsParameters.maimi);
-            actionsMenu.ProgectPageIsOpened();
+            //actionsMenu.ProgectPageIsOpened();
             
         }
 
@@ -88,7 +89,7 @@ namespace zonarNunit
         public void WhenISetCaseStudyCalibratuionSectionToAverageValues()
         {
             
-            actionsProjectPage.iSetCaseStudyCalibratuionSectionToAverageValues("Residential", "100");
+            actionsProjectPage.iSetCaseStudyCalibratuionSectionToAverageValues("Dwelling Units", "100");
             actionsProjectPage.iSetCaseStudyCalibratuionSectionToAverageValues("Dwelling Unit Average Gross Area", "1000");
             actionsProjectPage.iSetCaseStudyCalibratuionSectionToAverageValues("Lodging Rooms", "100");
             actionsProjectPage.iSetCaseStudyCalibratuionSectionToAverageValues("Lodging Room Average Gross Area", "100");
@@ -124,7 +125,7 @@ namespace zonarNunit
         [When(@"I Set ""(.*)"" to Calibratuion section Use Program Tab")]
         public void WhenISetToCalibratuionSectionUseProgramTab(string dataUseProgram)
         {
-            actionsProjectPage.iSetCaseStudyCalibratuionSectionToAverageValues("Residential", "100");
+            actionsProjectPage.iSetCaseStudyCalibratuionSectionToAverageValues("Dwelling Units", "100");
             actionsProjectPage.iSetCaseStudyCalibratuionSectionToAverageValues("Dwelling Unit Average Gross Area", "1000");
             actionsProjectPage.iSetCaseStudyCalibratuionSectionToAverageValues("Lodging Rooms", "100");
             actionsProjectPage.iSetCaseStudyCalibratuionSectionToAverageValues("Lodging Room Average Gross Area", "100");

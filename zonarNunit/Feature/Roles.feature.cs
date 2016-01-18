@@ -304,9 +304,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 91
  testRunner.Then("The result Account Page is Opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 92
- testRunner.When("I have Open My Buildings Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("I have Opened My Buildings Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 93
- testRunner.And("I open Existed Building", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I open Existed Building", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 94
  testRunner.And("I open Calibration Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 95

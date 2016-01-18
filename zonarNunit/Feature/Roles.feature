@@ -89,8 +89,8 @@ Scenario: AdminRolePermissionsCalibration
  And I have entered Exist Admin Password
  When I press Login Button
  Then The result Account Page is Opened
- When I have Open My Buildings Tab
- And I open Existed Building
+ Given I have Opened My Buildings Tab
+ When I open Existed Building
  And I open Calibration Tab
  Then I have Opened Calibration Tab
 

@@ -61,6 +61,7 @@ namespace zonarNunit
         [Then(@"I see my name in a conner")]
         public void ThenISeeMyNameInAConner()
         {
+
             actionsAccountPages.logoutQuitDriver();
         }
 

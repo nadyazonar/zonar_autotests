@@ -20,7 +20,7 @@ namespace zonarNunit.Locators
 
         //account page
         public static By logo = By.XPath(".//*[@id='work_area']/div/div[1]/div/h3/span[1]");
-        public static By createBuildingButton = By.XPath("html/body/main/div/div/div[1]/div/div[1]/button");
+        public static By createBuildingButton = By.XPath(".//*[button='Create building']/button");
 
 
         // create building pop up

@@ -54,9 +54,9 @@ namespace zonarNunit.Action
         public void mainPageWithLoginUser()
         {
             driver.Navigate().GoToUrl(baseUrl);
-            System.Threading.Thread.Sleep(3000);
+            System.Threading.Thread.Sleep(500);
 
-            if ( driver.Title == "My Express Application") 
+            if ( driver.Title == "Zonar Application") 
             {
                 
 
@@ -112,8 +112,10 @@ namespace zonarNunit.Action
                     if (IsElementPresent(locator)) break;
                 }
                 catch (Exception)
-                { }
-                Thread.Sleep(1500);
+                {
+                    
+                }
+                Thread.Sleep(1000);
             }  
         }
 
@@ -203,7 +205,7 @@ namespace zonarNunit.Action
                     parent1 = label.FindElement(By.XPath(".."));
                     parent = parent1.FindElement(By.XPath(".."));
                 }
-
+                 
 
             }
  

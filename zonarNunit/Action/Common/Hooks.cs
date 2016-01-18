@@ -31,12 +31,13 @@ namespace zonarNunit.Action
             driver = new ChromeDriver(@"D:\tool\");
             //driver = new FirefoxDriver();
             driver.Manage().Window.Maximize();
+            
         }
 
         [BeforeScenario]
         public static void BeforeScenario()
         {
-  
+            
         }
 
 
@@ -49,23 +50,24 @@ namespace zonarNunit.Action
 
         }
 
-
         [AfterFeature]
         public static void AfterFeature()
         {
-      
             driver.Quit();
-        }
 
-        [AfterFeature("buildingCreation")]
-        public static void AfterFeature1()
-        {
-            Action.AccountPageActions aa = new Action.AccountPageActions();
-            aa.iHaveDeleteAllTestBuilding();
-            driver.Quit();
         }
 
 
-       
+        ////[AfterFeature("@Login")]
+        ////public static void AfterFeature2()
+        ////{
+        ////    Console.Write("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+        ////    Action.AccountPageActions aa = new Action.AccountPageActions();
+        ////    aa.iHaveDeleteAllTestBuilding();
+        ////    driver.Quit();
+
+        ////}
+
+
     }
 }
